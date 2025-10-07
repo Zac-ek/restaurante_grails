@@ -1,0 +1,616 @@
+{
+	"info": {
+		"_postman_id": "00574949-7647-46a2-80b3-2ed33efd448c",
+		"name": "Restaurante",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48160047"
+	},
+	"item": [
+		{
+			"name": "Menu",
+			"item": [
+				{
+					"name": "Tipo Menu",
+					"item": [
+						{
+							"name": "Registrar",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.variables.set(\"nombre\", \"Dulces\")\r",
+											"pm.variables.set(\"uuid_padre\", \"a3c642f43efb48a4bb78e188091e4acb\")"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nombre\": \"{{nombre}}\",\r\n    \"padre\": \"{{uuid_padre}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/menu/tipo/nuevo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"menu",
+										"tipo",
+										"nuevo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Listar",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/menu/tipo/lista",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"menu",
+										"tipo",
+										"lista"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Ver información",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.variables.set(\"uuid\", \"4d73c54033ff48079da50f169d76490f\")"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/menu/tipo/{{uuid}}/informacion",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"menu",
+										"tipo",
+										"{{uuid}}",
+										"informacion"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Editar",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.variables.set(\"uuid\", \"4d73c54033ff48079da50f169d764906\")\r",
+											"pm.variables.set(\"nuevo_nombre\", \"Desayunos\")"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nombre\": \"{{nuevo_nombre}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/menu/tipo/{{uuid}}/editar?activo=true",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"menu",
+										"tipo",
+										"{{uuid}}",
+										"editar"
+									],
+									"query": [
+										{
+											"key": "activo",
+											"value": "true"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Activar",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.variables.set(\"uuid\", \"4d73c54033ff48079da50f169d764906\")"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/menu/tipo/{{uuid}}/activar",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"menu",
+										"tipo",
+										"{{uuid}}",
+										"activar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Desactivar",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.variables.set(\"uuid\", \"4d73c54033ff48079da50f169d764906\")"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/menu/tipo/{{uuid}}/desactivar",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"menu",
+										"tipo",
+										"{{uuid}}",
+										"desactivar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Eliminar",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.variables.set(\"uuid\", \"4d73c54033ff48079da50f169d764906\")"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/menu/tipo/{{uuid}}/eliminar",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"menu",
+										"tipo",
+										"{{uuid}}",
+										"eliminar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Lista para usuario final",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/menu/tipo/ver?pagina=1&columnaOrden=dateCreated&orden=desc&max=10&estatus=1&query=pos",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"menu",
+										"tipo",
+										"ver"
+									],
+									"query": [
+										{
+											"key": "pagina",
+											"value": "1"
+										},
+										{
+											"key": "columnaOrden",
+											"value": "dateCreated"
+										},
+										{
+											"key": "orden",
+											"value": "desc"
+										},
+										{
+											"key": "max",
+											"value": "10"
+										},
+										{
+											"key": "estatus",
+											"value": "1"
+										},
+										{
+											"key": "query",
+											"value": "pos"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Platillos",
+					"item": [
+						{
+							"name": "Registrar",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.variables.set(\"nombre\", \"Orden de tacos de mollejas\")\r",
+											"pm.variables.set(\"costo\", \"7000\")\r",
+											"pm.variables.set(\"descripcion\", \"comida\")\r",
+											"pm.variables.set(\"cantidad\", \"1\")\r",
+											"pm.variables.set(\"fechDis\", \"1759707000\")\r",
+											"pm.variables.set(\"tipo\", \"08197c7814b84ae8be720a53abd2d714\")"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nombre\": \"{{nombre}}\",\r\n    \"costo\": \"{{costo}}\",\r\n    \"descripcion\": \"{{descripcion}}\",\r\n    \"cantidad\": \"{{cantidad}}\",\r\n    // \"fechDis\": \"{{fechDis}}\",\r\n    \"tipo\": \"{{tipo}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/menu/platillo/nuevo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"menu",
+										"platillo",
+										"nuevo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Listar",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/menu/platillo/lista",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"menu",
+										"platillo",
+										"lista"
+									],
+									"query": [
+										{
+											"key": "tipo",
+											"value": "Desayuno",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Ver información",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.variables.set(\"uuid\", \"06a3ec659d624993bbc0682b82fc0902\")"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/menu/platillo/{{uuid}}/informacion",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"menu",
+										"platillo",
+										"{{uuid}}",
+										"informacion"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Editar",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.variables.set(\"uuid\", \"703dd5d9a68f41639511cbae1b97c5e1\")\r",
+											"pm.variables.set(\"nombre\", \"Chilaquiles con cecina\")\r",
+											"pm.variables.set(\"costo\", \"15000\")\r",
+											"pm.variables.set(\"descripcion\", \"Desayuno completo saludable\")\r",
+											"pm.variables.set(\"cantidad\", \"40\")\r",
+											"pm.variables.set(\"fechDis\", \"1759707000\")\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    // \"nombre\": \"{{nombre}}\",\r\n    \"costo\": \"{{costo}}\",\r\n    \"descripcion\": \"{{descripcion}}\",\r\n    \"cantidad\": \"{{cantidad}}\",\r\n    // \"fechDis\": \"{{fechDis}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/menu/platillo/{{uuid}}/editar",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"menu",
+										"platillo",
+										"{{uuid}}",
+										"editar"
+									],
+									"query": [
+										{
+											"key": "activo",
+											"value": "true",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Activar",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.variables.set(\"uuid\", \"703dd5d9a68f41639511cbae1b97c5e1\")"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/menu/platillo/{{uuid}}/activar",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"menu",
+										"platillo",
+										"{{uuid}}",
+										"activar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Desactivar",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.variables.set(\"uuid\", \"703dd5d9a68f41639511cbae1b97c5e1\")"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/menu/platillo/{{uuid}}/desactivar",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"menu",
+										"platillo",
+										"{{uuid}}",
+										"desactivar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Eliminar",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.variables.set(\"uuid\", \"703dd5d9a68f41639511cbae1b97c5e1\")"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/menu/platillo/{{uuid}}/eliminar",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"menu",
+										"platillo",
+										"{{uuid}}",
+										"eliminar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Listado usuario final",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/menu/platillo/ver?pagina=1&columnaOrden=dateCreated&orden=desc&max=3&status=1&query=pos",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"menu",
+										"platillo",
+										"ver"
+									],
+									"query": [
+										{
+											"key": "pagina",
+											"value": "1"
+										},
+										{
+											"key": "columnaOrden",
+											"value": "dateCreated"
+										},
+										{
+											"key": "orden",
+											"value": "desc"
+										},
+										{
+											"key": "max",
+											"value": "3"
+										},
+										{
+											"key": "status",
+											"value": "1"
+										},
+										{
+											"key": "query",
+											"value": "pos"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
