@@ -152,9 +152,10 @@ class PlatilloService {
             }
             if(fechDis){                
                 platillo.fechaDisponible = fechDis + 'T00:00:00Z'
-            }
-            if(fechDis == null){                
+                platillo.status = 1
+            }else{                
                 platillo.fechaDisponible = null
+                platillo.status = 0
             }
             platillo.save()
             return [
