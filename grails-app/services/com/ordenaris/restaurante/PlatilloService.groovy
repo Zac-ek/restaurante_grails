@@ -51,8 +51,10 @@ class PlatilloService {
             ]
             }
             def fecha
+            def sta = 1
             if(fechDis){
                 fecha = fechDis + 'T00:00:00Z'
+                sta = 0
             }
             def nuevoPlato
             if(cantidad){
@@ -62,7 +64,8 @@ class PlatilloService {
                     costo: costo, 
                     platillosDisponibles: cantidad, 
                     fechaDisponible: fecha, 
-                    tipoMenu: tipo_menu
+                    tipoMenu: tipo_menu,
+                    status: sta
                 ]).save(flush:true, failOnError:true)
             }else{
                 nuevoPlato = new Platillo([
@@ -70,7 +73,8 @@ class PlatilloService {
                     descripcion: descripcion, 
                     costo: costo, 
                     fechaDisponible: fecha, 
-                    tipoMenu: tipo_menu
+                    tipoMenu: tipo_menu,
+                    status: sta
                 ]).save(flush:true, failOnError:true)
             }
             return [
