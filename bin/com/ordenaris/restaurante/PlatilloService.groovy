@@ -134,10 +134,6 @@ class PlatilloService {
                     status: 500
                 ]
             }
-            def fecha
-            if(fechDis){
-                fecha = fechDis + 'T00:00:00Z'
-            }
             if(nombre){
                 platillo.nombre = nombre
             }
@@ -151,7 +147,7 @@ class PlatilloService {
                 platillo.platillosDisponibles = cantidad.toInteger()
             }
             if(fechDis){                
-                platillo.fechaDisponible = 
+                platillo.fechaDisponible = fechDis + 'T00:00:00Z'
             }
             if(fechDis == null){                
                 platillo.fechaDisponible = null

@@ -311,12 +311,12 @@
 									"listen": "prerequest",
 									"script": {
 										"exec": [
-											"pm.variables.set(\"nombre\", \"Orden de tacos de mollejas\")\r",
-											"pm.variables.set(\"costo\", \"7000\")\r",
-											"pm.variables.set(\"descripcion\", \"comida\")\r",
-											"pm.variables.set(\"cantidad\", \"1\")\r",
-											"pm.variables.set(\"fechDis\", \"1759707000\")\r",
-											"pm.variables.set(\"tipo\", \"08197c7814b84ae8be720a53abd2d714\")"
+											"pm.variables.set(\"nombre\", \"Quesabirrias\")\r",
+											"pm.variables.set(\"costo\", \"8000\")\r",
+											"pm.variables.set(\"descripcion\", \"Orden de 5\")\r",
+											"pm.variables.set(\"cantidad\", \"100\")\r",
+											"pm.variables.set(\"fechDis\", \"2025-10-10\")\r",
+											"pm.variables.set(\"tipo\", \"286afb25c7434ed2ae34719ce8cf093c\")"
 										],
 										"type": "text/javascript",
 										"packages": {},
@@ -329,7 +329,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"nombre\": \"{{nombre}}\",\r\n    \"costo\": \"{{costo}}\",\r\n    \"descripcion\": \"{{descripcion}}\",\r\n    \"cantidad\": \"{{cantidad}}\",\r\n    // \"fechDis\": \"{{fechDis}}\",\r\n    \"tipo\": \"{{tipo}}\"\r\n}",
+									"raw": "{\r\n    \"nombre\": \"{{nombre}}\",\r\n    \"costo\": \"{{costo}}\",\r\n    \"descripcion\": \"{{descripcion}}\",\r\n    \"cantidad\": \"{{cantidad}}\",\r\n    \"fechDis\": \"{{fechDis}}\",\r\n    \"tipo\": \"{{tipo}}\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -368,7 +368,7 @@
 									"query": [
 										{
 											"key": "tipo",
-											"value": "Desayuno",
+											"value": "1",
 											"disabled": true
 										}
 									]
@@ -383,7 +383,7 @@
 									"listen": "prerequest",
 									"script": {
 										"exec": [
-											"pm.variables.set(\"uuid\", \"06a3ec659d624993bbc0682b82fc0902\")"
+											"pm.variables.set(\"uuid\", \"703dd5d9a68f41639511cbae1b97c5e1\")"
 										],
 										"type": "text/javascript",
 										"packages": {},
@@ -435,7 +435,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    // \"nombre\": \"{{nombre}}\",\r\n    \"costo\": \"{{costo}}\",\r\n    \"descripcion\": \"{{descripcion}}\",\r\n    \"cantidad\": \"{{cantidad}}\",\r\n    // \"fechDis\": \"{{fechDis}}\"\r\n}",
+									"raw": "{\r\n    // \"nombre\": \"{{nombre}}\",\r\n    \"costo\": \"{{costo}}\",\r\n    \"descripcion\": \"{{descripcion}}\",\r\n    // \"cantidad\": \"{{cantidad}}\",\r\n    // \"fechDis\": \"{{fechDis}}\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -537,7 +537,7 @@
 									"listen": "prerequest",
 									"script": {
 										"exec": [
-											"pm.variables.set(\"uuid\", \"703dd5d9a68f41639511cbae1b97c5e1\")"
+											"pm.variables.set(\"uuid\", \"1639511cbae1b97c678y95e1\")"
 										],
 										"type": "text/javascript",
 										"packages": {},
@@ -569,7 +569,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{host}}/menu/platillo/ver?pagina=1&columnaOrden=dateCreated&orden=desc&max=3&status=1&query=pos",
+									"raw": "{{host}}/menu/platillo/ver?pagina=1&columna=nombre&orden=asc&max=5&status=1&query=c",
 									"host": [
 										"{{host}}"
 									],
@@ -584,16 +584,16 @@
 											"value": "1"
 										},
 										{
-											"key": "columnaOrden",
-											"value": "dateCreated"
+											"key": "columna",
+											"value": "nombre"
 										},
 										{
 											"key": "orden",
-											"value": "desc"
+											"value": "asc"
 										},
 										{
 											"key": "max",
-											"value": "3"
+											"value": "5"
 										},
 										{
 											"key": "status",
@@ -601,7 +601,7 @@
 										},
 										{
 											"key": "query",
-											"value": "pos"
+											"value": "c"
 										}
 									]
 								}
